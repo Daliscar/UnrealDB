@@ -1,0 +1,24 @@
+﻿@model IEnumerable<UnrealDB.Models.Enemy>
+
+@{
+    ViewBag.Title = "RawText";
+    Layout = "";
+
+}
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                {"@Html.DisplayNameFor(model => model.Id)": "@Html.DisplayFor(modelItem => item.Id)",
+                "@Html.DisplayNameFor(model => model.enemy_name)": "@Html.DisplayFor(modelItem => item.enemy_name)",
+                "@Html.DisplayNameFor(model => model.title)": "@Html.DisplayFor(modelItem => item.title)",
+                "@Html.DisplayNameFor(model => model.cursorIconName)": "@Html.DisplayFor(modelItem => item.cursorIconName)",
+                "@Html.DisplayNameFor(model => model.gossip_menu_id)": "@Html.DisplayFor(modelItem => item.gossip_menu_id)",
+                "@Html.DisplayNameFor(model => model.minLevel)": "@Html.DisplayFor(modelItem => item.minLevel)",
+                "@Html.DisplayNameFor(model => model.maxLevel)": "@Html.DisplayFor(modelItem => item.maxLevel)"}
+            </td>
+        </tr>
+    }
+</table>

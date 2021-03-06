@@ -1,0 +1,49 @@
+﻿@model UnrealDB.Models.Enemy
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Enemy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.enemy_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enemy_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cursorIconName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cursorIconName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gossip_menu_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gossip_menu_id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

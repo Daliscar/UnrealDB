@@ -1,0 +1,87 @@
+﻿@model IEnumerable<UnrealDB.Models.Enemy>
+
+@{
+    ViewBag.Title = "Enemy Collection";
+}
+    <h2>Enemy Collection</h2>
+
+    <p>
+        @if (!Model.Any())
+        {
+        }
+        @Html.ActionLink("Create a New Enemy", "Create", null, new { @class = "btn btn-primary btn-large" })
+        @if (Model.Any())
+        {
+            @Html.ActionLink("Show RawText", "RawText", null, new { @class = "btn btn-warning btn-large" })
+        }
+    </p>
+
+    <table class="table table-bordered table-hover table-responsive bg-info">
+        @if (Model.Any())
+        {
+            <thead class="bg-success">
+                <tr>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.enemy_name)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.title)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.cursorIconName)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.gossip_menu_id)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.minLevel)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.maxLevel)
+                    </th>
+                    <th class="text-center">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+        }
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+
+                    <tr class="text-center ">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.enemy_name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.cursorIconName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.gossip_menu_id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.minLevel)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.maxLevel)
+                        </td>
+
+
+                        <td class="text-nowrap">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" })
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("RawText", "RawTextId", new { id = item.Id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+
+                }
+            }
+        </tbody>
+    </table>
+
+
